@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\HRcontroller;
-use App\Http\Controllers\Leavescontroller;
-use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HRcontroller;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\Leavescontroller;
+use App\Http\Controllers\RecruitmentController;
 
 // For HRController
 Route::get("/", [HRcontroller::class,"index"]);
@@ -34,7 +35,7 @@ Route::middleware(['hr'])->group
     Route::get('/leave/reject/{id}', [Leavescontroller::class, 'reject']);
 
     // Recruitment related codes
-    // Route::get('/recruitment', [RecruitmentController::class, 'index'])->name('recruitment.index');
+    Route::get('/recruitment', [RecruitmentController::class, 'index'])->name('recruitment.index');
     // Route::get('/recruitment/create', [RecruitmentController::class, 'create'])->name('recruitment.create');
     // Route::post('/recruitment/store', [RecruitmentController::class, 'store'])->name('recruitment.store');
     // Route::get('/recruitment/{id}/edit', [RecruitmentController::class, 'edit'])->name('recruitment.edit');
@@ -56,7 +57,7 @@ Route::middleware(['employee'])->group(function () {
 
 // Job related Works
 Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
-// Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
+//  Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
 // Route::post('/jobs/{id}/apply', [JobController::class, 'apply'])->name('jobs.apply');
 
 

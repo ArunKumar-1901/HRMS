@@ -10,6 +10,7 @@ class RecruitmentController extends Controller
     public function index()
     {
         // Logic to display a list of recruitment records
+        return view("Recruitment.index");
     }
 
     public function create()

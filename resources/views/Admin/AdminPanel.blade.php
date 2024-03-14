@@ -52,6 +52,7 @@
     </table>
     <div>
     <a href="/EmployeeLeaveFiles">Check leave </a>
+    <a href="/recruitment">Check Recruitment </a>
     <form action="/logout" method="POST">
         @csrf
         <button type="submit">Logout</button>
